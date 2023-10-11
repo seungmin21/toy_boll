@@ -18,13 +18,16 @@
     <div id="moving-box"></div>
   </div>
   <script>
+    const root = document.getElementById('root');
+    root.style.position = "relative";
 
     const movingBox = document.getElementById('moving-box');
     console.dir(movingBox);
+
     movingBox.style.width = "100px";
     movingBox.style.height = "100px";
     movingBox.style.backgroundColor = "green";
-    movingBox.style.position = "relative";
+    movingBox.style.position = "absolute";
 
     let i = 0;
 
@@ -32,17 +35,7 @@
       movingBox.style.top = i + "vh";
       movingBox.style.left = i + "vw";
       i++
-      // 조건문 구현이 안되는 상태
-      // 만약 무빙박스의 top이 100vh일 경우 혹은 무빙박스의 left가 100vw일 경우
-      // 실행문
-      // 참이 아닐 경우 멈춤
-      if(movingBox.style.top === "100vh" || movingBox.style.left === "100vw") {
-        movingBox.style.bottom = i + "vh";
-        movingBox.style.right = i + "vw";
-        i++
-      } else {
-        clearInterval(Interval);
-      }
+      
     }, 100);
   </script>
 </body>
