@@ -24,7 +24,15 @@
     movingBox.style.width = "100px";
     movingBox.style.height = "100px";
     movingBox.style.backgroundColor = "green";
+    movingBox.style.position = "relative";
 
+    let i = 0;
+
+    const Interval = setInterval(() => {
+      movingBox.style.top = i + "vw"
+      movingBox.style.left = i + "vh"
+      i++
+    }, 100);
   </script>
 </body>
 </html>
